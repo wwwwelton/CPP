@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:21:07 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/03 03:36:03 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/03 04:19:42 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int main(void) {
 	std::string option;
 
 	while (1) {
-		std::cout << "Please choose one of the options: ";
-		std::cout << "ADD, SEARCH or EXIT" << std::endl;
+		std::cout << "Please choose one of the options: "
+		          << "ADD, SEARCH or EXIT" << std::endl;
 		std::cin >> option;
 		if (option == "ADD") {
 			AddContact(myPhoneBook);
@@ -70,8 +70,7 @@ int main(void) {
 		} else if (option == "EXIT") {
 			break;
 		} else {
-			std::cout << CLEAR;
-			std::cout << "Invalid option!" << std::endl
+			std::cout << CLEAR << "Invalid option!" << std::endl
 			          << std::endl;
 		}
 	}

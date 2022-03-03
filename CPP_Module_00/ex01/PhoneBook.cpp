@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:12:44 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/03 03:35:52 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/03 04:27:59 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void PhoneBook::Add(std::string firstName,
                     std::string nickName,
                     std::string phoneNumber,
                     std::string darkestSecret) {
-	this->contacts[this->index].firstName = firstName;
-	this->contacts[this->index].lastName = lastName;
-	this->contacts[this->index].nickName = nickName;
-	this->contacts[this->index].phoneNumber = phoneNumber;
-	this->contacts[this->index].darkestSecret = darkestSecret;
+	this->contacts[this->index].SetFirstName(firstName);
+	this->contacts[this->index].SetLastName(lastName);
+	this->contacts[this->index].SetNickName(nickName);
+	this->contacts[this->index].SetPhoneNumber(phoneNumber);
+	this->contacts[this->index].SetDarkestSecret(darkestSecret);
 	if (this->count < 8)
 		this->count++;
 	this->index++;
@@ -42,14 +42,14 @@ void PhoneBook::Add(std::string firstName,
 
 void PhoneBook::Search(int index) {
 	if (index >= 0 && index < this->count && index < 8) {
-		PrintOneContact(this->contacts[index]);
+		_PrintOneContact(this->contacts[index]);
 	} else {
 		std::cout << "Invalid contact index!" << std::endl
 		          << std::endl;
 	}
 }
 
-void PhoneBook::PrintFormattedField(std::string str) {
+void PhoneBook::_PrintFormattedField(std::string str) {
 	if (str.length() > 9) {
 		std::cout << std::right << std::setw(10) << str.substr(0, 9) + '.';
 	} else {
@@ -74,11 +74,11 @@ void PhoneBook::PrintAllContacts(void) {
 		std::cout << "| ";
 		std::cout << std::right << std::setw(10) << i + 1;
 		std::cout << " | ";
-		PrintFormattedField(this->contacts[i].firstName);
+		_PrintFormattedField(this->contacts[i].GetFirstName());
 		std::cout << " | ";
-		PrintFormattedField(this->contacts[i].lastName);
+		_PrintFormattedField(this->contacts[i].GetLastName());
 		std::cout << " | ";
-		PrintFormattedField(this->contacts[i].nickName);
+		_PrintFormattedField(this->contacts[i].GetNickName());
 		std::cout << " |";
 		std::cout << std::endl;
 		std::cout << "-----------------------------------------------------";
@@ -87,12 +87,12 @@ void PhoneBook::PrintAllContacts(void) {
 	std::cout << std::endl;
 }
 
-void PhoneBook::PrintOneContact(Contact contact) {
-	std::cout << "First Name: " << contact.firstName << std::endl;
-	std::cout << "Last Name: " << contact.lastName << std::endl;
-	std::cout << "Nickname: " << contact.nickName << std::endl;
-	std::cout << "Phone Number: " << contact.phoneNumber << std::endl;
-	std::cout << "Darkest Secret: " << contact.darkestSecret << std::endl;
+void PhoneBook::_PrintOneContact(Contact contact) {
+	std::cout << "First Name: " << contact.GetFirstName() << std::endl;
+	std::cout << "Last Name: " << contact.GetLastName() << std::endl;
+	std::cout << "Nickname: " << contact.GetNickName() << std::endl;
+	std::cout << "Phone Number: " << contact.GetPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << contact.GetDarkestSecret() << std::endl;
 	std::cout << std::endl;
 }
 

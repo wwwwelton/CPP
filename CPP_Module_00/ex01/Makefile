@@ -1,4 +1,4 @@
-SOURCES_FILES	=	main.cpp PhoneBook.cpp
+SOURCES_FILES	=	main.cpp Contact.cpp PhoneBook.cpp
 
 SOURCES_DIR		=	./
 

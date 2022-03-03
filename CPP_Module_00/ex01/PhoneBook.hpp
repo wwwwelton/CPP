@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:12:39 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/03 03:35:16 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/03 04:27:36 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class PhoneBook {
 	int index;
 	Contact contacts[8];
 
-	void PrintOneContact(Contact contact);
+	void _PrintOneContact(Contact contact);
 
-	void PrintFormattedField(std::string str);
+	void _PrintFormattedField(std::string str);
 
    public:
 	PhoneBook(void);
