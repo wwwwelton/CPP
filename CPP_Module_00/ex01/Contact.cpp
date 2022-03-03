@@ -6,48 +6,48 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 04:09:38 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/03 04:16:52 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/03 06:07:58 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-std::string Contact::GetFirstName(void) {
-	return (this->firstName);
+std::string Contact::getFirstName(void) {
+	return (this->_firstName);
 }
 
-std::string Contact::GetLastName(void) {
-	return (this->lastName);
+std::string Contact::getLastName(void) {
+	return (this->_lastName);
 }
 
-std::string Contact::GetNickName(void) {
-	return (this->nickName);
+std::string Contact::getNickName(void) {
+	return (this->_nickName);
 }
 
-std::string Contact::GetPhoneNumber(void) {
-	return (this->phoneNumber);
+std::string Contact::getPhoneNumber(void) {
+	return (this->_phoneNumber);
 }
 
-std::string Contact::GetDarkestSecret(void) {
-	return (this->darkestSecret);
+std::string Contact::getDarkestSecret(void) {
+	return (this->_darkestSecret);
 }
 
-void Contact::SetFirstName(std::string firstName) {
-	this->firstName = firstName;
+void Contact::setFirstName(std::string firstName) {
+	this->_firstName = firstName;
 }
 
-void Contact::SetLastName(std::string lastName) {
-	this->lastName = lastName;
+void Contact::setLastName(std::string lastName) {
+	this->_lastName = lastName;
 }
 
-void Contact::SetNickName(std::string nickName) {
-	this->nickName = nickName;
+void Contact::setNickName(std::string nickName) {
+	this->_nickName = nickName;
 }
 
-void Contact::SetPhoneNumber(std::string phoneNumber) {
-	this->phoneNumber = phoneNumber;
+void Contact::setPhoneNumber(std::string phoneNumber) {
+	this->_phoneNumber = phoneNumber;
 }
 
-void Contact::SetDarkestSecret(std::string darkestSecret) {
-	this->darkestSecret = darkestSecret;
+void Contact::setDarkestSecret(std::string darkestSecret) {
+	this->_darkestSecret = darkestSecret;
 }

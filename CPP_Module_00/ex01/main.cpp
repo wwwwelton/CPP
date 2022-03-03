@@ -6,13 +6,46 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:21:07 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/03 04:19:42 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/03 06:10:36 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-void AddContact(PhoneBook &myPhoneBook) {
+bool validPhoneNumber(std::string phoneNumber) {
+	std::string set = "0123456789 -()";
+
+	if (phoneNumber.length() < 8) {
+		std::cout << "Invalid phone number!"
+		          << std::endl
+		          << std::endl;
+		return (false);
+	}
+	for (std::string::iterator it = phoneNumber.begin(); it != phoneNumber.end(); ++it) {
+		if (set.find(*it) == std::string::npos) {
+			std::cout << "Invalid phone number!"
+			          << std::endl
+			          << std::endl;
+			return (false);
+		}
+	}
+	return (true);
+}
+
+bool validContactField(std::string field, std::string fieldName) {
+	for (std::string::iterator it = field.begin(); it != field.end(); ++it) {
+		if (!std::isalnum(*it)) {
+			std::cout << fieldName
+			          << " field accepts only alphanumeric ascii characters!"
+			          << std::endl
+			          << std::endl;
+			return (false);
+		}
+	}
+	return (true);
+}
+
+void addContact(PhoneBook &myPhoneBook) {
 	std::string firstName;
 	std::string lastName;
 	std::string nickName;
@@ -24,35 +57,44 @@ void AddContact(PhoneBook &myPhoneBook) {
 	std::cin.ignore();
 	std::cout << "First Name: ";
 	std::getline(std::cin, firstName);
+	if (!validContactField(firstName, "First Name"))
+		return;
 	std::cout << "Last Name: ";
 	std::getline(std::cin, lastName);
+	if (!validContactField(lastName, "Last Name"))
+		return;
 	std::cout << "Nickname: ";
 	std::getline(std::cin, nickName);
+	if (!validContactField(nickName, "Nickname"))
+		return;
 	std::cout << "Phone Number: ";
 	std::getline(std::cin, phoneNumber);
+	if (!validPhoneNumber(phoneNumber))
+		return;
 	std::cout << "Darkest Secret: ";
 	std::getline(std::cin, darkestSecret);
-	myPhoneBook.Add(firstName, lastName, nickName, phoneNumber, darkestSecret);
-	std::cout << "Contact " << firstName << " added to your phonebook." << std::endl
+	myPhoneBook.add(firstName, lastName, nickName, phoneNumber, darkestSecret);
+	std::cout << "Contact " << firstName
+	          << " added to your phonebook." << std::endl
 	          << std::endl;
 }
 
-void SearchContact(PhoneBook myPhoneBook) {
+void searchContact(PhoneBook myPhoneBook) {
 	std::string option;
 	std::stringstream ss;
 	int index;
 
 	std::cout << CLEAR;
-	if (myPhoneBook.GetContactsCount() == 0) {
+	if (myPhoneBook.getContactsCount() == 0) {
 		std::cout << "The phonebook is empty!" << std::endl
 		          << std::endl;
 		return;
 	}
-	myPhoneBook.PrintAllContacts();
+	myPhoneBook.printAllContacts();
 	std::cout << "Please enter the contact index: ", std::cin >> option;
 	ss << option;
 	ss >> index;
-	myPhoneBook.Search(index - 1);
+	myPhoneBook.search(index - 1);
 }
 
 int main(void) {
@@ -64,9 +106,9 @@ int main(void) {
 		          << "ADD, SEARCH or EXIT" << std::endl;
 		std::cin >> option;
 		if (option == "ADD") {
-			AddContact(myPhoneBook);
+			addContact(myPhoneBook);
 		} else if (option == "SEARCH") {
-			SearchContact(myPhoneBook);
+			searchContact(myPhoneBook);
 		} else if (option == "EXIT") {
 			break;
 		} else {

@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:12:44 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/03 04:27:59 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/03 06:07:58 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,41 +15,41 @@
 #include <sstream>
 
 PhoneBook::PhoneBook(void) {
-	this->count = 0;
-	this->index = 0;
+	this->_count = 0;
+	this->_index = 0;
 }
 
 PhoneBook::~PhoneBook(void) {
 	return;
 }
 
-void PhoneBook::Add(std::string firstName,
+void PhoneBook::add(std::string firstName,
                     std::string lastName,
                     std::string nickName,
                     std::string phoneNumber,
                     std::string darkestSecret) {
-	this->contacts[this->index].SetFirstName(firstName);
-	this->contacts[this->index].SetLastName(lastName);
-	this->contacts[this->index].SetNickName(nickName);
-	this->contacts[this->index].SetPhoneNumber(phoneNumber);
-	this->contacts[this->index].SetDarkestSecret(darkestSecret);
-	if (this->count < 8)
-		this->count++;
-	this->index++;
-	if (this->index > 8)
-		this->index %= 8;
+	this->_contacts[this->_index].setFirstName(firstName);
+	this->_contacts[this->_index].setLastName(lastName);
+	this->_contacts[this->_index].setNickName(nickName);
+	this->_contacts[this->_index].setPhoneNumber(phoneNumber);
+	this->_contacts[this->_index].setDarkestSecret(darkestSecret);
+	if (this->_count < 8)
+		this->_count++;
+	this->_index++;
+	if (this->_index >= 8)
+		this->_index %= 8;
 }
 
-void PhoneBook::Search(int index) {
-	if (index >= 0 && index < this->count && index < 8) {
-		_PrintOneContact(this->contacts[index]);
+void PhoneBook::search(int index) {
+	if (index >= 0 && index < this->_count && index < 8) {
+		_printOneContact(this->_contacts[index]);
 	} else {
 		std::cout << "Invalid contact index!" << std::endl
 		          << std::endl;
 	}
 }
 
-void PhoneBook::_PrintFormattedField(std::string str) {
+void PhoneBook::_printFormattedField(std::string str) {
 	if (str.length() > 9) {
 		std::cout << std::right << std::setw(10) << str.substr(0, 9) + '.';
 	} else {
@@ -57,7 +57,7 @@ void PhoneBook::_PrintFormattedField(std::string str) {
 	}
 }
 
-void PhoneBook::PrintAllContacts(void) {
+void PhoneBook::printAllContacts(void) {
 	std::cout << "| ";
 	std::cout << "   INDEX  ";
 	std::cout << " | ";
@@ -70,15 +70,15 @@ void PhoneBook::PrintAllContacts(void) {
 	std::cout << std::endl;
 	std::cout << "-----------------------------------------------------";
 	std::cout << std::endl;
-	for (int i = 0; i < this->count; i++) {
+	for (int i = 0; i < this->_count; i++) {
 		std::cout << "| ";
 		std::cout << std::right << std::setw(10) << i + 1;
 		std::cout << " | ";
-		_PrintFormattedField(this->contacts[i].GetFirstName());
+		_printFormattedField(this->_contacts[i].getFirstName());
 		std::cout << " | ";
-		_PrintFormattedField(this->contacts[i].GetLastName());
+		_printFormattedField(this->_contacts[i].getLastName());
 		std::cout << " | ";
-		_PrintFormattedField(this->contacts[i].GetNickName());
+		_printFormattedField(this->_contacts[i].getNickName());
 		std::cout << " |";
 		std::cout << std::endl;
 		std::cout << "-----------------------------------------------------";
@@ -87,15 +87,15 @@ void PhoneBook::PrintAllContacts(void) {
 	std::cout << std::endl;
 }
 
-void PhoneBook::_PrintOneContact(Contact contact) {
-	std::cout << "First Name: " << contact.GetFirstName() << std::endl;
-	std::cout << "Last Name: " << contact.GetLastName() << std::endl;
-	std::cout << "Nickname: " << contact.GetNickName() << std::endl;
-	std::cout << "Phone Number: " << contact.GetPhoneNumber() << std::endl;
-	std::cout << "Darkest Secret: " << contact.GetDarkestSecret() << std::endl;
+void PhoneBook::_printOneContact(Contact contact) {
+	std::cout << "First Name: " << contact.getFirstName() << std::endl;
+	std::cout << "Last Name: " << contact.getLastName() << std::endl;
+	std::cout << "Nickname: " << contact.getNickName() << std::endl;
+	std::cout << "Phone Number: " << contact.getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << contact.getDarkestSecret() << std::endl;
 	std::cout << std::endl;
 }
 
-int PhoneBook::GetContactsCount(void) {
-	return (this->count);
+int PhoneBook::getContactsCount(void) {
+	return (this->_count);
 }
