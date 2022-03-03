@@ -6,13 +6,11 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:12:44 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/03 06:07:58 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/03 06:18:11 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-
-#include <sstream>
 
 PhoneBook::PhoneBook(void) {
 	this->_count = 0;

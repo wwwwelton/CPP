@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:12:39 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/03 06:05:55 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/03 06:18:04 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iomanip>
 #include <iostream>
+#include <sstream>
 
 #include "Contact.hpp"
 
