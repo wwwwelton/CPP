@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:12:39 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/03 06:18:04 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/05 00:28:19 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,6 @@
 #include "Contact.hpp"
 
 class PhoneBook {
-   private:
-	int _count;
-	int _index;
-	Contact _contacts[8];
-
-	void _printOneContact(Contact contact);
-
-	void _printFormattedField(std::string str);
-
    public:
 	PhoneBook(void);
 	~PhoneBook(void);
@@ -44,6 +35,15 @@ class PhoneBook {
 	void search(int index);
 
 	int getContactsCount(void);
+
+   private:
+	int _count;
+	int _index;
+	Contact _contacts[8];
+
+	void _printOneContact(Contact contact);
+
+	void _printFormattedField(std::string str);
 };
 
 #endif
