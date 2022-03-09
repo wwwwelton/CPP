@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 03:29:39 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/08 15:45:11 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/09 14:21:04 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Fixed {
 	int toInt(void) const;
 
    private:
-	int _fixedPointNbr;
+	int _rawBits;
 	static int const _fractionalBits;
 };
 

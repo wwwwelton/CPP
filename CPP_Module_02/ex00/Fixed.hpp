@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 03:29:39 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/08 05:12:23 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/09 14:21:04 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Fixed {
 	void setRawBits(int const raw);
 
    private:
-	int _fixedPointNbr;
+	int _rawBits;
 	static int const _fractionalBits;
 };
 
