@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 03:29:39 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/09 14:21:04 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/10 03:34:24 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed {
    public:
 	Fixed(void);
 	Fixed(int const n);
-	Fixed(float const n);
+	Fixed(float const f);
 	Fixed(Fixed const &src);
 	~Fixed(void);
 

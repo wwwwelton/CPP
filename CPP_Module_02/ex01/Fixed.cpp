@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 03:30:32 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/09 14:21:04 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/10 03:34:41 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ Fixed::Fixed(int const n) {
 	this->_rawBits = n << _fractionalBits;
 }
 
-Fixed::Fixed(float const n) {
+Fixed::Fixed(float const f) {
 	std::cout << "Float constructor called\n";
-	this->_rawBits = static_cast<int>(roundf(n * (1 << _fractionalBits)));
+	this->_rawBits = static_cast<int>(roundf(f * (1 << _fractionalBits)));
 }
 
 Fixed::Fixed(Fixed const &src) {
