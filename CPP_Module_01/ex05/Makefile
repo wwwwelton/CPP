@@ -1,16 +1,16 @@
-SOURCES_FILES	=	main.cpp Karen.cpp
+SOURCES_FILES	=	main.cpp Harl.cpp
 
 SOURCES_DIR		=	./
 
 OBJ_DIR			=	objects
 
-HEADERS			=	Karen.hpp
+HEADERS			=	Harl.hpp
 
 SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
 
 OBJECTS			=	$(SOURCES:$(SOURCES_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-NAME			=	karen
+NAME			=	harl
 
 CC				=	c++
 CFLAGS			=	-Wall -Wextra -Werror -std=c++98 -pedantic-errors -g
@@ -39,6 +39,6 @@ fclean:				clean
 re:					fclean all
 
 test:
-					chmod a+x karen.sh && ./karen.sh
+					chmod a+x $(NAME).sh && ./$(NAME).sh
 
 .PHONY:				all clean fclean re test

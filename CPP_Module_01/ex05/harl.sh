@@ -2,7 +2,7 @@
 
 make && clear
 # Replace with the name of your binary
-BIN=karenFilter
+BIN=harl
 
 echo -e "\e[1;32mTest 1: DEBUG\e[0m"
 ./$BIN DEBUG

@@ -1,16 +1,16 @@
-SOURCES_FILES	=	main.cpp Karen.cpp
+SOURCES_FILES	=	main.cpp Harl.cpp
 
 SOURCES_DIR		=	./
 
 OBJ_DIR			=	objects
 
-HEADERS			=	Karen.hpp
+HEADERS			=	Harl.hpp
 
 SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
 
 OBJECTS			=	$(SOURCES:$(SOURCES_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-NAME			=	karenFilter
+NAME			=	harlFilter
 
 CC				=	c++
 CFLAGS			=	-Wall -Wextra -Werror -std=c++98 -pedantic-errors -g
