@@ -1,12 +1,10 @@
-SOURCES_FILES	=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp
-SOURCES_FILES	+=	WrongCat.cpp Brain.cpp
+SOURCES_FILES	=	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 SOURCES_DIR		=	./
 
 OBJ_DIR			=	objects
 
-HEADERS			=	Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp
-HEADERS			+=	WrongCat.hpp Brain.hpp
+HEADERS			=	Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
 

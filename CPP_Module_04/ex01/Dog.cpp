@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 19:41:39 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/14 02:27:31 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/14 17:12:43 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ Dog::Dog(void) : Animal("Dog") {
 
 Dog::Dog(Dog const &src) : Animal("Dog") {
 	std::cout << "Dog copy constructor called\n";
-	this->_type = src.getType();
 	this->_brain = new Brain(*src.getBrain());
+	*this = src;
 }
 
 Dog::~Dog(void) {

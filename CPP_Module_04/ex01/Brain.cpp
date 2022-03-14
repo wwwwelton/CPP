@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 23:45:16 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/14 02:27:31 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/14 17:10:26 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ Brain::Brain(void) {
 
 Brain::Brain(Brain const &src) {
 	std::cout << "Brain copy constructor called\n";
-	for (int i = 0; i < 100; i++) {
-		this->_ideas[i] = src.getIdea(i);
-	}
+	*this = src;
 }
 
 Brain::~Brain(void) {
