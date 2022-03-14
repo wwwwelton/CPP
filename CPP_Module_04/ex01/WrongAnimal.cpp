@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 20:11:59 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/13 23:30:16 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/14 02:27:31 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ WrongAnimal::~WrongAnimal(void) {
 }
 
 WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rhs) {
-	std::cout << "WrongAnimal copy assignment operator called\n";
+	std::cout << "WrongAnimal assignment operator called\n";
 	if (this != &rhs) {
 		this->_type = rhs.getType();
 	}

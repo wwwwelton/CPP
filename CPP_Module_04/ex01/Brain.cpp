@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 23:45:16 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/14 01:16:57 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/14 02:27:31 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Brain::~Brain(void) {
 }
 
 Brain &Brain::operator=(Brain const &rhs) {
-	std::cout << "Brain copy assignment operator called\n";
+	std::cout << "Brain assignment operator called\n";
 	if (this != &rhs) {
 		for (int i = 0; i < 100; i++) {
 			this->_ideas[i] = rhs.getIdea(i);

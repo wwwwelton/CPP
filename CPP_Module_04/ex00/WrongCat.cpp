@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 20:26:14 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/13 20:32:05 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/14 02:27:31 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongCat::~WrongCat(void) {
 }
 
 WrongCat &WrongCat::operator=(WrongCat const &rhs) {
-	std::cout << "WrongCat copy assignment operator called\n";
+	std::cout << "WrongCat assignment operator called\n";
 	if (this != &rhs) {
 		this->_type = rhs.getType();
 	}

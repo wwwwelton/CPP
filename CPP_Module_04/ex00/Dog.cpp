@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 19:41:39 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/13 20:00:17 by wleite           ###   ########.fr       */
+/*   Updated: 2022/03/14 02:27:31 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Dog::~Dog(void) {
 }
 
 Dog &Dog::operator=(Dog const &rhs) {
-	std::cout << "Dog copy assignment operator called\n";
+	std::cout << "Dog assignment operator called\n";
 	if (this != &rhs) {
 		this->_type = rhs.getType();
 	}
