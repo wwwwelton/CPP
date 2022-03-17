@@ -31,7 +31,7 @@ const std::string& RobotomyRequestForm::getTarget(void) const {
 }
 
 void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
-  unsigned int seed;
+  unsigned int seed = time(0);
   int randNum = rand_r(&seed) % (10);
 
   if (this->getIsSigned() == false) {

@@ -68,6 +68,7 @@ int main(void) {
     delete f;
   } catch (std::exception& e) {
     std::cerr << e.what() << "\n";
+    delete b;
   }
 
   std::cout << "\n";

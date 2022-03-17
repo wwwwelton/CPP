@@ -45,7 +45,7 @@ int main(void) {
     f = new Form("Form2", 1, 1);
     std::cout << *f;
     std::cout << "\n";
-	std::cout << *b;
+    std::cout << *b;
     b->signForm(*f);
     std::cout << "\n";
     std::cout << *f;

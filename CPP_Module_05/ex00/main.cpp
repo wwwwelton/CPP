@@ -22,6 +22,7 @@ int main(void) {
     delete b;
   } catch (std::exception& e) {
     std::cerr << e.what() << "\n";
+    delete b;
   }
 
   try {
@@ -39,6 +40,7 @@ int main(void) {
     delete b;
   } catch (std::exception& e) {
     std::cerr << e.what() << "\n";
+    delete b;
   }
 
   try {
@@ -82,6 +84,7 @@ int main(void) {
   } catch (std::exception& e) {
     std::cerr << e.what() << "\n";
   }
+
 
   return (0);
 }

@@ -24,9 +24,10 @@ Intern& Intern::operator=(const Intern& rhs) {
 }
 
 AForm* Intern::makeForm(const std::string name, const std::string target) {
-  std::string formType[3] = {"shrubbery creation",
+  std::string formType[4] = {"shrubbery creation",
                              "robotomy request",
-                             "presidential pardon"};
+                             "presidential pardon",
+                             "invalid form"};
   int option;
 
   for (option = 0; option < 4; option++) {
