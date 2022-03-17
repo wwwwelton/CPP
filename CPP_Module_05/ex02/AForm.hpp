@@ -1,7 +1,7 @@
 // Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef EX02_FORM_HPP_
-#define EX02_FORM_HPP_
+#ifndef EX02_AFORM_HPP_
+#define EX02_AFORM_HPP_
 
 #include <exception>
 #include <string>
@@ -10,7 +10,7 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
  public:
   class GradeTooHighException : public std::exception {
    public:
@@ -32,12 +32,12 @@ class Form {
     const char* what(void) const throw();
   };
 
-  Form(void);
-  Form(const std::string name, const int reqGradeSign, const int reqGradeExec);
-  Form(const Form& src);
-  virtual ~Form(void);
+  AForm(void);
+  AForm(const std::string name, const int reqGradeSign, const int reqGradeExec);
+  AForm(const AForm& src);
+  virtual ~AForm(void);
 
-  Form& operator=(const Form& rhs);
+  AForm& operator=(const AForm& rhs);
 
   const std::string& getName(void) const;
   bool getIsSigned(void) const;
@@ -61,6 +61,6 @@ class Form {
   const int _reqGradeExec;
 };
 
-std::ostream& operator<<(std::ostream& o, const Form& i);
+std::ostream& operator<<(std::ostream& o, const AForm& i);
 
-#endif  // EX02_FORM_HPP_
+#endif  // EX02_AFORM_HPP_

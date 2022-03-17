@@ -2,15 +2,15 @@
 
 #include <iostream>
 
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
 int main(void) {
   Bureaucrat* b;
-  Form* f;
+  AForm* f;
 
   std::cout << "\n";
 

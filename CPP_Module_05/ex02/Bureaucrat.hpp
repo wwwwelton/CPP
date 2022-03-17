@@ -8,9 +8,9 @@
 #include <ostream>
 #include <string>
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat {
  public:
@@ -36,8 +36,8 @@ class Bureaucrat {
   void incrementGrade(void);
   void decrementGrade(void);
 
-  void signForm(const Form& form) const;
-  void executeForm(const Form& form) const;
+  void signForm(const AForm& form) const;
+  void executeForm(const AForm& form) const;
 
  private:
   const std::string _name;

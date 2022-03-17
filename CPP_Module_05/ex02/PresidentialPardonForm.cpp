@@ -2,18 +2,18 @@
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void) : Form() {
+PresidentialPardonForm::PresidentialPardonForm(void) : AForm() {
   return;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
-    : Form("Presidential Pardon Form", 25, 5) {
+    : AForm("Presidential Pardon Form", 25, 5) {
   this->setTarget(target);
 }
 
 PresidentialPardonForm::PresidentialPardonForm(
     const PresidentialPardonForm& src)
-    : Form(src) {
+    : AForm(src) {
   *this = src;
 }
 
@@ -33,9 +33,9 @@ const std::string& PresidentialPardonForm::getTarget(void) const {
 
 void PresidentialPardonForm::execute(const Bureaucrat& executor) const {
   if (this->getIsSigned() == false) {
-    throw Form::UnsignedFormException();
+    throw AForm::UnsignedFormException();
   } else if (executor.getGrade() > this->getReqGradeExec()) {
-    throw Form::GradeTooHighException();
+    throw AForm::GradeTooHighException();
   } else if (executor.getGrade() <= this->getReqGradeExec()) {
     std::cout << this->getTarget()
               << " has been pardoned by Zaphod Beeblebrox.\n";

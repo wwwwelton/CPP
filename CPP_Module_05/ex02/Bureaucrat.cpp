@@ -70,9 +70,9 @@ void Bureaucrat::decrementGrade(void) {
   }
 }
 
-void Bureaucrat::signForm(const Form& form) const {
+void Bureaucrat::signForm(const AForm& form) const {
   try {
-    (*const_cast<Form*>(&form)).beSigned(*this);
+    (*const_cast<AForm*>(&form)).beSigned(*this);
     std::cout << this->getName() << " signed " << form.getName() << ".\n";
   } catch (const std::exception& e) {
     std::cout << this->getName()
@@ -84,9 +84,9 @@ void Bureaucrat::signForm(const Form& form) const {
   }
 }
 
-void Bureaucrat::executeForm(const Form& form) const {
+void Bureaucrat::executeForm(const AForm& form) const {
   try {
-    (*const_cast<Form*>(&form)).execute(*this);
+    (*const_cast<AForm*>(&form)).execute(*this);
     std::cout << this->getName() << " executed " << form.getName() << ".\n";
   } catch (const std::exception& e) {
     std::cout << this->getName()

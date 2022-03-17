@@ -1,11 +1,11 @@
-SOURCES_FILES	=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
+SOURCES_FILES	=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 SOURCES_FILES	+=	RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 SOURCES_DIR		=	./
 
 OBJ_DIR			=	objects
 
-HEADERS			=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp
+HEADERS			=	Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp
 HEADERS			+=	RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))

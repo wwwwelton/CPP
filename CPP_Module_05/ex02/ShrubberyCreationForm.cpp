@@ -2,17 +2,17 @@
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : Form() {
+ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm() {
   return;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
-    : Form("Shrubbery Creation Form", 145, 137) {
+    : AForm("Shrubbery Creation Form", 145, 137) {
   this->setTarget(target);
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& src)
-    : Form(src) {
+    : AForm(src) {
   *this = src;
 }
 
@@ -32,14 +32,14 @@ const std::string& ShrubberyCreationForm::getTarget(void) const {
 
 void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
   if (this->getIsSigned() == false) {
-    throw Form::UnsignedFormException();
+    throw AForm::UnsignedFormException();
   } else if (executor.getGrade() > this->getReqGradeExec()) {
-    throw Form::GradeTooHighException();
+    throw AForm::GradeTooHighException();
   } else if (executor.getGrade() <= this->getReqGradeExec()) {
     std::string fileOutput(this->getTarget() + "_shrubbery");
     std::ofstream ofs(fileOutput.c_str());
     if (ofs.fail()) {
-      throw Form::FileOutputException();
+      throw AForm::FileOutputException();
     }
     std::string tree =
         "       ###       \n"

@@ -6,9 +6,9 @@
 #include <cstdlib>
 #include <string>
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class RobotomyRequestForm : public Form {
+class RobotomyRequestForm : public AForm {
  public:
   RobotomyRequestForm(void);
   explicit RobotomyRequestForm(const std::string& target);

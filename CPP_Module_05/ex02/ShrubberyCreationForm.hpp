@@ -6,9 +6,9 @@
 #include <fstream>
 #include <string>
 
-#include "../ex02/Form.hpp"
+#include "AForm.hpp"
 
-class ShrubberyCreationForm : public Form {
+class ShrubberyCreationForm : public AForm {
  public:
   ShrubberyCreationForm(void);
   explicit ShrubberyCreationForm(const std::string& target);

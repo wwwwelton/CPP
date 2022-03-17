@@ -2,17 +2,17 @@
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(void) : Form() {
+RobotomyRequestForm::RobotomyRequestForm(void) : AForm() {
   return;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
-    : Form("Robotomy Request Form", 72, 45) {
+    : AForm("Robotomy Request Form", 72, 45) {
   this->setTarget(target);
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& src)
-    : Form(src) {
+    : AForm(src) {
   *this = src;
 }
 
@@ -35,9 +35,9 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
   int randNum = rand_r(&seed) % (10);
 
   if (this->getIsSigned() == false) {
-    throw Form::UnsignedFormException();
+    throw AForm::UnsignedFormException();
   } else if (executor.getGrade() > this->getReqGradeExec()) {
-    throw Form::GradeTooHighException();
+    throw AForm::GradeTooHighException();
   } else if (executor.getGrade() <= this->getReqGradeExec() && randNum < 5) {
     std::cout << "zzzzzzzz\n";
     std::cout << this->getTarget()

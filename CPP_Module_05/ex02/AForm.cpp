@@ -1,38 +1,38 @@
 // Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-const char* Form::GradeTooHighException::what(void) const throw() {
+const char* AForm::GradeTooHighException::what(void) const throw() {
   return ("Form required Grade is too high!");
 }
 
-const char* Form::GradeTooLowException::what(void) const throw() {
+const char* AForm::GradeTooLowException::what(void) const throw() {
   return ("Form required Grade is too low!");
 }
 
-const char* Form::FileOutputException::what(void) const throw() {
+const char* AForm::FileOutputException::what(void) const throw() {
   return ("Cannot write the file output!");
 }
 
-const char* Form::UnsignedFormException::what(void) const throw() {
+const char* AForm::UnsignedFormException::what(void) const throw() {
   return ("Form is not signed!");
 }
 
-Form::Form(void) : _target(""),
-                   _name(""),
-                   _isSigned(false),
-                   _reqGradeSign(0),
-                   _reqGradeExec(0) {
+AForm::AForm(void) : _target(""),
+                     _name(""),
+                     _isSigned(false),
+                     _reqGradeSign(0),
+                     _reqGradeExec(0) {
   return;
 }
 
-Form::Form(const std::string name,
-           const int reqGradeSign,
-           const int reqGradeExec) : _target(""),
-                                     _name(name),
-                                     _isSigned(false),
-                                     _reqGradeSign(reqGradeSign),
-                                     _reqGradeExec(reqGradeExec) {
+AForm::AForm(const std::string name,
+             const int reqGradeSign,
+             const int reqGradeExec) : _target(""),
+                                       _name(name),
+                                       _isSigned(false),
+                                       _reqGradeSign(reqGradeSign),
+                                       _reqGradeExec(reqGradeExec) {
   if (this->_reqGradeSign < 1 || this->_reqGradeExec < 1) {
     throw GradeTooHighException();
   }
@@ -41,11 +41,11 @@ Form::Form(const std::string name,
   }
 }
 
-Form::Form(const Form& src) : _target(""),
-                              _name(""),
-                              _isSigned(false),
-                              _reqGradeSign(0),
-                              _reqGradeExec(0) {
+AForm::AForm(const AForm& src) : _target(""),
+                                 _name(""),
+                                 _isSigned(false),
+                                 _reqGradeSign(0),
+                                 _reqGradeExec(0) {
   *this = src;
   if (src.getReqGradeSign() < 1 || src.getReqGradeExec() < 1) {
     throw GradeTooHighException();
@@ -55,11 +55,11 @@ Form::Form(const Form& src) : _target(""),
   }
 }
 
-Form::~Form(void) {
+AForm::~AForm(void) {
   return;
 }
 
-Form& Form::operator=(const Form& rhs) {
+AForm& AForm::operator=(const AForm& rhs) {
   if (this != &rhs) {
     const_cast<std::string&>(this->_target) = rhs.getTarget();
     const_cast<std::string&>(this->_name) = rhs.getName();
@@ -70,40 +70,40 @@ Form& Form::operator=(const Form& rhs) {
   return (*this);
 }
 
-const std::string& Form::getName(void) const {
+const std::string& AForm::getName(void) const {
   return (this->_name);
 }
 
-bool Form::getIsSigned(void) const {
+bool AForm::getIsSigned(void) const {
   return (this->_isSigned);
 }
 
-int Form::getReqGradeSign(void) const {
+int AForm::getReqGradeSign(void) const {
   return (this->_reqGradeSign);
 }
 
-int Form::getReqGradeExec(void) const {
+int AForm::getReqGradeExec(void) const {
   return (this->_reqGradeExec);
 }
 
-const std::string& Form::getTarget(void) const {
+const std::string& AForm::getTarget(void) const {
   return (this->_target);
 }
 
-void Form::setTarget(const std::string& target) {
+void AForm::setTarget(const std::string& target) {
   const_cast<std::string&>(this->_target) = target;
 }
 
-void Form::beSigned(const Bureaucrat& b) {
+void AForm::beSigned(const Bureaucrat& b) {
   if (b.getGrade() <= this->_reqGradeSign) {
     this->_isSigned = true;
   }
   if (b.getGrade() > this->_reqGradeSign) {
-    throw Form::GradeTooHighException();
+    throw AForm::GradeTooHighException();
   }
 }
 
-std::ostream& operator<<(std::ostream& o, const Form& i) {
+std::ostream& operator<<(std::ostream& o, const AForm& i) {
   o << "Form: " << i.getName() << "\n";
   o << "Target: " << i.getTarget() << "\n";
   o << "Signed: " << (i.getIsSigned() ? "Yes" : "No")
