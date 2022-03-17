@@ -3,11 +3,11 @@
 #include "Form.hpp"
 
 const char* Form::GradeTooHighException::what(void) const throw() {
-  return ("Form's required sign Grade is too high!");
+  return ("Form required Grade is too high!");
 }
 
 const char* Form::GradeTooLowException::what(void) const throw() {
-  return ("Form's required sign Grade is too low!");
+  return ("Form required Grade is too low!");
 }
 
 Form::Form(void) : _name(""),
