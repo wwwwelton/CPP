@@ -1,33 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Harl.hpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 14:51:28 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/08 00:33:05 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#ifndef EX05_HARL_HPP_
+#define EX05_HARL_HPP_
 
 #include <iostream>
+#include <string>
 
 class Harl {
-   public:
-	Harl(void);
-	~Harl(void);
+ public:
+  Harl(void);
+  ~Harl(void);
 
-	void complain(std::string level);
+  void complain(std::string level);
 
-   private:
-	void debug(void);
-	void info(void);
-	void warning(void);
-	void error(void);
-	void invalid(void);
+ private:
+  void debug(void);
+  void info(void);
+  void warning(void);
+  void error(void);
+  void invalid(void);
 };
 
-#endif
+#endif  // EX05_HARL_HPP_

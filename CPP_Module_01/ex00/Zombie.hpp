@@ -1,32 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 00:05:50 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/05 01:53:53 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef EX00_ZOMBIE_HPP_
+#define EX00_ZOMBIE_HPP_
 
 #include <string>
 
 class Zombie {
-   public:
-	Zombie(std::string name);
-	~Zombie(void);
+ public:
+  explicit Zombie(std::string name);
+  ~Zombie(void);
 
-	void announce(void);
+  void announce(void);
 
-   private:
-	std::string const _name;
+ private:
+  std::string const _name;
 };
 
 Zombie* newZombie(std::string name);
 void randomChump(std::string name);
 
-#endif
+#endif  // EX00_ZOMBIE_HPP_

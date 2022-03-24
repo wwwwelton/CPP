@@ -1,32 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 02:13:16 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/05 02:53:19 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef EX01_ZOMBIE_HPP_
+#define EX01_ZOMBIE_HPP_
 
 #include <string>
 
 class Zombie {
-   public:
-	Zombie(void);
-	~Zombie(void);
+ public:
+  Zombie(void);
+  ~Zombie(void);
 
-	void announce(void);
-	void setZombieName(std::string name);
+  void announce(void);
+  void setZombieName(std::string name);
 
-   private:
-	std::string _name;
+ private:
+  std::string _name;
 };
 
 Zombie* zombieHorde(int N, std::string name);
 
-#endif
+#endif  // EX01_ZOMBIE_HPP_

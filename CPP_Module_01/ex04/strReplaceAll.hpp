@@ -1,17 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   strReplaceAll.hpp                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 17:49:38 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/06 09:43:00 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef STR_REPLACE_ALL_HPP
-#define STR_REPLACE_ALL_HPP
+#ifndef EX04_STRREPLACEALL_HPP_
+#define EX04_STRREPLACEALL_HPP_
 
 #include <string>
 
@@ -24,4 +14,4 @@ std::string strReplaceAll(const std::string& str,
                           const std::string& oldWord,
                           const std::string& newWord);
 
-#endif
+#endif  // EX04_STRREPLACEALL_HPP_

@@ -1,24 +1,14 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 02:12:55 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/05 03:07:31 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
 #include "Zombie.hpp"
 
 int main(void) {
-	Zombie *zombies;
+  Zombie *zombies;
 
-	zombies = zombieHorde(8, "Zombie");
-	for (int i = 0; i < 8; i++) {
-		zombies[i].announce();
-	}
-	delete [] zombies;
-	return (0);
+  zombies = zombieHorde(8, "Zombie");
+  for (int i = 0; i < 8; i++) {
+    zombies[i].announce();
+  }
+  delete[] zombies;
+  return (0);
 }

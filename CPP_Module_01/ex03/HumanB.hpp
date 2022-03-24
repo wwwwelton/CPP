@@ -1,33 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 03:27:48 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/05 16:12:40 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef HUMAN_B_HPP
-#define HUMAN_B_HPP
+#ifndef EX03_HUMANB_HPP_
+#define EX03_HUMANB_HPP_
 
 #include <iostream>
+#include <string>
 
 #include "Weapon.hpp"
 
 class HumanB {
-   public:
-	HumanB(std::string name);
-	~HumanB(void);
+ public:
+  explicit HumanB(std::string name);
+  ~HumanB(void);
 
-	void attack(void) const;
-	void setWeapon(Weapon &weapon);
+  void attack(void) const;
+  void setWeapon(Weapon &weapon);
 
-   private:
-	std::string _name;
-	Weapon *_weapon;
+ private:
+  std::string _name;
+  Weapon *_weapon;
 };
 
-#endif
+#endif  // EX03_HUMANB_HPP_

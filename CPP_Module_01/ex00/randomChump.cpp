@@ -1,18 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 00:05:57 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/05 01:52:42 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
 #include "Zombie.hpp"
 
 void randomChump(std::string name) {
-	Zombie z(name);
-	z.announce();
+  Zombie z(name);
+  z.announce();
 }
