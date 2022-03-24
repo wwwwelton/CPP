@@ -1,49 +1,40 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 04:12:39 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/05 00:28:19 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef PHONE_BOOK_HPP
-#define PHONE_BOOK_HPP
+#ifndef EX01_PHONEBOOK_HPP_
+#define EX01_PHONEBOOK_HPP_
 
 #include <iomanip>
 #include <iostream>
 #include <sstream>
+#include <string>
 
 #include "Contact.hpp"
 
 class PhoneBook {
-   public:
-	PhoneBook(void);
-	~PhoneBook(void);
+ public:
+  PhoneBook(void);
+  ~PhoneBook(void);
 
-	void add(std::string firstName,
-	         std::string lastName,
-	         std::string nickName,
-	         std::string phoneNumber,
-	         std::string darkestSecret);
+  void add(std::string firstName,
+           std::string lastName,
+           std::string nickName,
+           std::string phoneNumber,
+           std::string darkestSecret);
 
-	void printAllContacts(void);
+  void printAllContacts(void);
 
-	void search(int index);
+  void search(int index);
 
-	int getContactsCount(void);
+  int getContactsCount(void);
 
-   private:
-	int _count;
-	int _index;
-	Contact _contacts[8];
+ private:
+  int _count;
+  int _index;
+  Contact _contacts[8];
 
-	void _printOneContact(Contact contact);
+  void _printOneContact(Contact contact);
 
-	void _printFormattedField(std::string str);
+  void _printFormattedField(std::string str);
 };
 
-#endif
+#endif  // EX01_PHONEBOOK_HPP_

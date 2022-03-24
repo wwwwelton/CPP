@@ -38,4 +38,7 @@ fclean:				clean
 
 re:					fclean all
 
+test:
+					chmod a+x $(NAME).sh && ./$(NAME).sh
+
 .PHONY:				all clean fclean re
