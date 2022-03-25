@@ -1,63 +1,53 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 03:29:39 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/10 03:24:25 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef EX03_FIXED_HPP_
+#define EX03_FIXED_HPP_
 
 #include <cmath>
 #include <iostream>
 
 class Fixed {
-   public:
-	Fixed(void);
-	Fixed(int const n);
-	Fixed(float const f);
-	Fixed(Fixed const &src);
-	~Fixed(void);
+ public:
+  Fixed(void);
+  Fixed(int const n);
+  Fixed(float const f);
+  Fixed(Fixed const &src);
+  ~Fixed(void);
 
-	Fixed &operator=(Fixed const &rhs);
+  Fixed &operator=(Fixed const &rhs);
 
-	bool operator>(Fixed const &rhs) const;
-	bool operator<(Fixed const &rhs) const;
-	bool operator>=(Fixed const &rhs) const;
-	bool operator<=(Fixed const &rhs) const;
-	bool operator==(Fixed const &rhs) const;
-	bool operator!=(Fixed const &rhs) const;
+  bool operator>(Fixed const &rhs) const;
+  bool operator<(Fixed const &rhs) const;
+  bool operator>=(Fixed const &rhs) const;
+  bool operator<=(Fixed const &rhs) const;
+  bool operator==(Fixed const &rhs) const;
+  bool operator!=(Fixed const &rhs) const;
 
-	Fixed operator+(Fixed const &rhs) const;
-	Fixed operator-(Fixed const &rhs) const;
-	Fixed operator*(Fixed const &rhs) const;
-	Fixed operator/(Fixed const &rhs) const;
+  Fixed operator+(Fixed const &rhs) const;
+  Fixed operator-(Fixed const &rhs) const;
+  Fixed operator*(Fixed const &rhs) const;
+  Fixed operator/(Fixed const &rhs) const;
 
-	Fixed &operator++(void);  // Prefix increment operator.
-	Fixed operator++(int);    // Postfix increment operator.
-	Fixed &operator--(void);  // Prefix decrement operator.
-	Fixed operator--(int);    // Postfix decrement operator.
+  Fixed &operator++(void);  // Prefix increment operator.
+  Fixed operator++(int);    // Postfix increment operator.
+  Fixed &operator--(void);  // Prefix decrement operator.
+  Fixed operator--(int);    // Postfix decrement operator.
 
-	static Fixed &min(Fixed &lhs, Fixed &rhs);
-	static Fixed const &min(Fixed const &lhs, Fixed const &rhs);
-	static Fixed &max(Fixed &lhs, Fixed &rhs);
-	static Fixed const &max(Fixed const &lhs, Fixed const &rhs);
+  static Fixed &min(Fixed &lhs, Fixed &rhs);
+  static Fixed const &min(Fixed const &lhs, Fixed const &rhs);
+  static Fixed &max(Fixed &lhs, Fixed &rhs);
+  static Fixed const &max(Fixed const &lhs, Fixed const &rhs);
 
-	int getRawBits(void) const;
-	void setRawBits(int const raw);
-	float toFloat(void) const;
-	int toInt(void) const;
+  int getRawBits(void) const;
+  void setRawBits(int const raw);
+  float toFloat(void) const;
+  int toInt(void) const;
 
-   private:
-	int _rawBits;
-	static int const _fractionalBits;
+ private:
+  int _rawBits;
+  static int const _fractionalBits;
 };
 
 std::ostream &operator<<(std::ostream &o, Fixed const &i);
 
-#endif
+#endif  // EX03_FIXED_HPP_

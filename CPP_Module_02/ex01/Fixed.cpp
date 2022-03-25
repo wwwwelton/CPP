@@ -1,14 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 03:30:32 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/10 03:34:41 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
 #include "Fixed.hpp"
 
@@ -17,55 +7,55 @@
 int const Fixed::_fractionalBits = 8;
 
 Fixed::Fixed(void) : _rawBits(0) {
-	std::cout << "Default constructor called\n";
-	return;
+  std::cout << "Default constructor called\n";
+  return;
 }
 
 Fixed::Fixed(int const n) {
-	std::cout << "Int constructor called\n";
-	this->_rawBits = n << _fractionalBits;
+  std::cout << "Int constructor called\n";
+  this->_rawBits = n << _fractionalBits;
 }
 
 Fixed::Fixed(float const f) {
-	std::cout << "Float constructor called\n";
-	this->_rawBits = static_cast<int>(roundf(f * (1 << _fractionalBits)));
+  std::cout << "Float constructor called\n";
+  this->_rawBits = static_cast<int>(roundf(f * (1 << _fractionalBits)));
 }
 
 Fixed::Fixed(Fixed const &src) {
-	std::cout << "Copy constructor called\n";
-	*this = src;
-	return;
+  std::cout << "Copy constructor called\n";
+  *this = src;
+  return;
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Destructor called\n";
-	return;
+  std::cout << "Destructor called\n";
+  return;
 }
 
 Fixed &Fixed::operator=(Fixed const &src) {
-	std::cout << "Copy assignment operator called\n";
-	this->setRawBits(src.getRawBits());
-	return (*this);
+  std::cout << "Copy assignment operator called\n";
+  this->setRawBits(src.getRawBits());
+  return (*this);
 }
 
 int Fixed::getRawBits(void) const {
-	return (this->_rawBits);
+  return (this->_rawBits);
 }
 
 void Fixed::setRawBits(int const raw) {
-	this->_rawBits = raw;
-	return;
+  this->_rawBits = raw;
+  return;
 }
 
 float Fixed::toFloat(void) const {
-	return (static_cast<float>(this->_rawBits) / (1 << _fractionalBits));
+  return (static_cast<float>(this->_rawBits) / (1 << _fractionalBits));
 }
 
 int Fixed::toInt(void) const {
-	return (this->_rawBits >> _fractionalBits);
+  return (this->_rawBits >> _fractionalBits);
 }
 
 std::ostream &operator<<(std::ostream &o, Fixed const &i) {
-	o << i.toFloat();
-	return (o);
+  o << i.toFloat();
+  return (o);
 }
