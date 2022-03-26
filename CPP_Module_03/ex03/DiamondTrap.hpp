@@ -1,37 +1,29 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 01:53:12 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/12 04:04:42 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef DIAMOND_TRAP_HPP
-#define DIAMOND_TRAP_HPP
+#ifndef EX03_DIAMONDTRAP_HPP_
+#define EX03_DIAMONDTRAP_HPP_
+
+#include <string>
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
 class DiamondTrap : public ScavTrap, public FragTrap {
-   public:
-	DiamondTrap(void);
-	DiamondTrap(std::string const name);
-	DiamondTrap(DiamondTrap const &src);
-	~DiamondTrap(void);
+ public:
+  DiamondTrap(void);
+  explicit DiamondTrap(std::string const name);
+  DiamondTrap(DiamondTrap const &src);
+  ~DiamondTrap(void);
 
-	DiamondTrap &operator=(DiamondTrap const &rhs);
+  DiamondTrap &operator=(DiamondTrap const &rhs);
 
-	std::string getName(void) const;
+  std::string getName(void) const;
 
-	void attack(const std::string &target);
-	void whoAmI(void);
+  void attack(const std::string &target);
+  void whoAmI(void);
 
-   private:
-	std::string const _name;
+ private:
+  std::string const _name;
 };
 
-#endif
+#endif  // EX03_DIAMONDTRAP_HPP_

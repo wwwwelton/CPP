@@ -1,53 +1,44 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 22:07:34 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/11 23:52:44 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef CLAP_TRAP_HPP
-#define CLAP_TRAP_HPP
+#ifndef EX01_CLAPTRAP_HPP_
+#define EX01_CLAPTRAP_HPP_
 
 #include <iostream>
+#include <string>
 
 class ClapTrap {
-   public:
-	ClapTrap(void);
-	ClapTrap(std::string const name);
-	ClapTrap(ClapTrap const &src);
-	~ClapTrap(void);
+ public:
+  ClapTrap(void);
+  explicit ClapTrap(std::string const name);
+  ClapTrap(ClapTrap const &src);
+  ~ClapTrap(void);
 
-	ClapTrap &operator=(ClapTrap const &rhs);
+  ClapTrap &operator=(ClapTrap const &rhs);
 
-	std::string getName(void) const;
-	std::string getClassName(void) const;
-	unsigned int getHP(void) const;
-	unsigned int getEP(void) const;
-	unsigned int getAD(void) const;
+  std::string getName(void) const;
+  std::string getClassName(void) const;
+  unsigned int getHP(void) const;
+  unsigned int getEP(void) const;
+  unsigned int getAD(void) const;
 
-	void setName(std::string const &name);
-	void setClassName(std::string const &className);
-	void setHP(unsigned int hitPoints);
-	void setEP(unsigned int energyPoints);
-	void setAD(unsigned int attackDamage);
+  void setName(std::string const &name);
+  void setClassName(std::string const &className);
+  void setHP(unsigned int hitPoints);
+  void setEP(unsigned int energyPoints);
+  void setAD(unsigned int attackDamage);
 
-	void attack(const std::string &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+  void attack(const std::string &target);
+  void takeDamage(unsigned int amount);
+  void beRepaired(unsigned int amount);
 
-   protected:
-	std::string const _name;
-	std::string const _className;
-	unsigned int _hitPoints;
-	unsigned int _energyPoints;
-	unsigned int _attackDamage;
+ protected:
+  std::string const _name;
+  std::string const _className;
+  unsigned int _hitPoints;
+  unsigned int _energyPoints;
+  unsigned int _attackDamage;
 };
 
 std::ostream &operator<<(std::ostream &o, ClapTrap const &i);
 
-#endif
+#endif  // EX01_CLAPTRAP_HPP_

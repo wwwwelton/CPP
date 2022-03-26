@@ -1,31 +1,23 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 22:49:48 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/12 02:44:50 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef SCAV_TRAP_HPP
-#define SCAV_TRAP_HPP
+#ifndef EX03_SCAVTRAP_HPP_
+#define EX03_SCAVTRAP_HPP_
+
+#include <string>
 
 #include "ClapTrap.hpp"
 
 class ScavTrap : virtual public ClapTrap {
-   public:
-	ScavTrap(void);
-	ScavTrap(std::string const name);
-	ScavTrap(ScavTrap const &src);
-	~ScavTrap(void);
+ public:
+  ScavTrap(void);
+  explicit ScavTrap(std::string const name);
+  ScavTrap(ScavTrap const &src);
+  ~ScavTrap(void);
 
-	ScavTrap &operator=(ScavTrap const &rhs);
+  ScavTrap &operator=(ScavTrap const &rhs);
 
-	void attack(const std::string &target);
-	void guardGate(void) const;
+  void attack(const std::string &target);
+  void guardGate(void) const;
 };
 
-#endif
+#endif  // EX03_SCAVTRAP_HPP_

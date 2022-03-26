@@ -1,30 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 01:10:08 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/12 02:44:45 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef FRAG_TRAP_HPP
-#define FRAG_TRAP_HPP
+#ifndef EX03_FRAGTRAP_HPP_
+#define EX03_FRAGTRAP_HPP_
+
+#include <string>
 
 #include "ClapTrap.hpp"
 
 class FragTrap : virtual public ClapTrap {
-   public:
-	FragTrap(void);
-	FragTrap(std::string const name);
-	FragTrap(FragTrap const &src);
-	~FragTrap(void);
+ public:
+  FragTrap(void);
+  explicit FragTrap(std::string const name);
+  FragTrap(FragTrap const &src);
+  ~FragTrap(void);
 
-	FragTrap &operator=(FragTrap const &rhs);
+  FragTrap &operator=(FragTrap const &rhs);
 
-	void highFivesGuys(void);
+  void highFivesGuys(void);
 };
 
-#endif
+#endif  // EX03_FRAGTRAP_HPP_
