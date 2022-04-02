@@ -1,29 +1,19 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/13 19:51:45 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/13 21:04:24 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef EX00_CAT_HPP_
+#define EX00_CAT_HPP_
 
 #include "Animal.hpp"
 
 class Cat : public Animal {
-   public:
-	Cat(void);
-	Cat(Cat const &src);
-	virtual ~Cat(void);
+ public:
+  Cat(void);
+  Cat(Cat const &src);
+  virtual ~Cat(void);
 
-	Cat &operator=(Cat const &rhs);
+  Cat &operator=(Cat const &rhs);
 
-	void makeSound(void) const;
+  void makeSound(void) const;
 };
 
-#endif
+#endif  // EX00_CAT_HPP_

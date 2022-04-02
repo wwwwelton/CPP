@@ -1,42 +1,33 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 00:23:53 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/15 20:46:48 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef CHARACTER_HPP
-#define CHARACTER_HPP
+#ifndef EX03_CHARACTER_HPP_
+#define EX03_CHARACTER_HPP_
 
 #include <iostream>
+#include <string>
 
 #include "ICharacter.hpp"
 
 class AMateria;
 
 class Character : public ICharacter {
-   public:
-	Character(void);
-	Character(std::string const &name);
-	Character(Character const &src);
-	virtual ~Character(void);
+ public:
+  Character(void);
+  explicit Character(std::string const &name);
+  Character(Character const &src);
+  virtual ~Character(void);
 
-	Character &operator=(Character const &rhs);
+  Character &operator=(Character const &rhs);
 
-	AMateria const *getAMateria(int idx) const;
-	std::string const &getName(void) const;
-	void equip(AMateria *m);
-	void unequip(int idx);
-	void use(int idx, ICharacter &target);
+  AMateria const *getAMateria(int idx) const;
+  std::string const &getName(void) const;
+  void equip(AMateria *m);
+  void unequip(int idx);
+  void use(int idx, ICharacter &target);
 
-   private:
-	std::string _name;
-	AMateria *_iventory[4];
+ private:
+  std::string _name;
+  AMateria *_iventory[4];
 };
 
-#endif
+#endif  // EX03_CHARACTER_HPP_

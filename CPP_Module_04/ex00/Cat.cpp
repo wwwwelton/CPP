@@ -1,38 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/13 19:54:10 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/14 02:27:31 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
 #include "Cat.hpp"
 
 Cat::Cat(void) : Animal("Cat") {
-	std::cout << "Cat default constructor called\n";
+  std::cout << "Cat default constructor called\n";
 }
 
 Cat::Cat(Cat const &src) : Animal("Cat") {
-	std::cout << "Cat copy constructor called\n";
-	*this = src;
+  std::cout << "Cat copy constructor called\n";
+  *this = src;
 }
 
 Cat::~Cat(void) {
-	std::cout << "Cat destructor called\n";
+  std::cout << "Cat destructor called\n";
 }
 
 Cat &Cat::operator=(Cat const &rhs) {
-	std::cout << "Cat assignment operator called\n";
-	if (this != &rhs) {
-		this->_type = rhs.getType();
-	}
-	return (*this);
+  std::cout << "Cat assignment operator called\n";
+  if (this != &rhs) {
+    this->_type = rhs.getType();
+  }
+  return (*this);
 }
 
 void Cat::makeSound(void) const {
-	std::cout << "meowwwww!\n";
+  std::cout << "meowwwww!\n";
 }

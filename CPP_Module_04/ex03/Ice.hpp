@@ -1,32 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 23:58:39 by wleite            #+#    #+#             */
-/*   Updated: 2022/03/15 13:51:43 by wleite           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Copyright (c) 2022 Welton Leite, wleite. All rights reserved.
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#ifndef EX03_ICE_HPP_
+#define EX03_ICE_HPP_
+
+#include <string>
 
 #include "AMateria.hpp"
 #include "iostream"
 
 class Ice : public AMateria {
-   public:
-	Ice(void);
-	Ice(std::string const &type);
-	Ice(Ice const &src);
-	virtual ~Ice(void);
+ public:
+  Ice(void);
+  explicit Ice(std::string const &type);
+  Ice(Ice const &src);
+  virtual ~Ice(void);
 
-	Ice &operator=(Ice const &rhs);
+  Ice &operator=(Ice const &rhs);
 
-	AMateria *clone(void) const;
-	void use(ICharacter &target);
+  AMateria *clone(void) const;
+  void use(ICharacter &target);
 };
 
-#endif
+#endif  // EX03_ICE_HPP_
