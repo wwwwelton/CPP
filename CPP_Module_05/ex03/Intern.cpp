@@ -23,42 +23,39 @@ Intern& Intern::operator=(const Intern& rhs) {
   return (*this);
 }
 
+AForm* Intern::shrubberyCreationForm(const std::string target) const {
+  return (new ShrubberyCreationForm(target));
+}
+
+AForm* Intern::robotomyRequestForm(const std::string target) const {
+  return (new RobotomyRequestForm(target));
+}
+
+AForm* Intern::presidentialPardonForm(const std::string target) const {
+  return (new PresidentialPardonForm(target));
+}
+
+AForm* Intern::invalidForm(const std::string target) const {
+  (void)target;
+  return (NULL);
+}
+
 AForm* Intern::makeForm(const std::string name, const std::string target) {
   std::string formType[4] = {"shrubbery creation",
                              "robotomy request",
                              "presidential pardon",
                              "invalid form"};
-  int option;
+  AForm* (Intern::*f[4])(const std::string) const = {
+      &Intern::shrubberyCreationForm,
+      &Intern::robotomyRequestForm,
+      &Intern::presidentialPardonForm,
+      &Intern::invalidForm};
 
-  for (option = 0; option < 4; option++) {
-    if (!formType[option].compare(name)) {
-      break;
+  for (int i = 0; i < 3; i++) {
+    if (!formType[i].compare(name)) {
+      return ((this->*f[i])(target));
     }
   }
-
-  switch (option) {
-    case 0:
-      std::cout << "Intern creates shrubbery creation form, target: "
-                << target << ".\n";
-      return (new ShrubberyCreationForm(target));
-      break;
-    case 1:
-      std::cout << "Intern creates robotomy request form, target: "
-                << target << ".\n";
-      return (new RobotomyRequestForm(target));
-      break;
-    case 2:
-      std::cout << "Intern creates presidential pardon form, target: "
-                << target << ".\n";
-      return (new PresidentialPardonForm(target));
-      break;
-
-    default:
-      std::cout << "Intern cannot creates "
-                << name
-                << " because ";
-      throw Intern::NoMatchException();
-      return (NULL);
-      break;
-  }
+  throw Intern::NoMatchException();
+  return ((this->*f[4])(target));
 }
