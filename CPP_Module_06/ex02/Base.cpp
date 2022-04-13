@@ -36,18 +36,18 @@ void identify(Base* p) {
 
 void identify(Base& p) {
   try {
-    dynamic_cast<A&>(p);
+    A a = dynamic_cast<A&>(p);
     std::cout << "Type: A\n";
   } catch (const std::exception& e1) {
     try {
-      dynamic_cast<B&>(p);
+      B b = dynamic_cast<B&>(p);
       std::cout << "Type: B\n";
     } catch (const std::exception& e2) {
       try {
-        dynamic_cast<C&>(p);
+        C c = dynamic_cast<C&>(p);
         std::cout << "Type: C\n";
       } catch (const std::exception& e3) {
-        std::cerr << "Invalid pointer\n";
+        std::cerr << "Invalid reference\n";
       }
     }
   }
