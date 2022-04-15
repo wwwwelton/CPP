@@ -11,7 +11,7 @@ void iter(T* addr, size_t lenght, void (*f)(const T&)) {
 }
 
 template <typename T>
-void print(const T& x) {
+void print2(const T& x) {
   std::cout << x << " ";
 }
 
