@@ -13,8 +13,7 @@ OBJECTS			=	$(SOURCES:$(SOURCES_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 NAME			=	iter
 
 CC				=	c++
-CFLAGS			=	-Wall -Wextra -Werror -Wshadow -Wconversion
-CFLAGS			+=	-std=c++98 -pedantic-errors -g
+CFLAGS			=	-Wall -Wextra -Werror -std=c++98 -pedantic-errors -g
 
 RM				=	rm -rf
 
