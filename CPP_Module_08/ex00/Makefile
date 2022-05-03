@@ -13,7 +13,7 @@ OBJECTS			=	$(SOURCES:$(SOURCES_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 NAME			=	easyfind
 
 CC				=	c++
-CFLAGS			=	-Wall -Wextra -Werror -Wshadow -Wconversion
+CFLAGS			=	-Wall -Wextra -Werror
 CFLAGS			+=	-std=c++98 -pedantic-errors -g
 
 RM				=	rm -rf
